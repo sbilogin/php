@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIT Subject Courses Showcase</title>
+  <style>
+    body {
+      color: #ffffff; /* Light text color for better visibility on the background image */
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black container background color */
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    h1 {
+      color: antiquewhite;
+      text-align: center;
+    }
+
+    h2 {
+      color: #ffffff;
+    }
+
+    h3 {
+      color: #40aeae;
+    }
+
+    h4 {
+      color: gray;
+    }
+
+    .tabs {
+      border-bottom: 2px solid #ffffff;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .tabs div {
+      color: #77bad4;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .tabs div:hover, .tabs div.active {
+      border-bottom: 2px solid #00ff4c;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Vishwakarma Institute of Technology University</h1>
+    <h2>Subject Courses Showcase</h2>
+
+    <div class="tabs">
+      <div id="wt-tab" class="active">WT</div>
+      <div id="daa-tab">DAA</div>
+      <div id="cc-tab">CC</div>
+      <div id="sdam-tab">SDAM</div>
+    </div>
+
+    <div id="wt" class="tab-content active">
+      <h3>Web Technology</h3>
+      <h4>Course Outcomes</h4>
+      <p> 1. to Learn HTML</p>
+      <p> 1. to Learn HTML</p>
+      <p> 1. to Learn HTML</p>
+      <p> 1. to Learn HTML</p><p> 1. to Learn HTML</p>
+      <p> 1. to Learn HTML</p>
+      
+    </div>
+
+    <div id="daa" class="tab-content">
+      <h3>Design and Analysis of Algorithm</h3>
+      <h4>Course Outcomes</h4>
+      <p> 1. to learn greaddy algorithms</p>
+      <p> 1. to learn greaddy algorithms</p>
+      <p> 1. to learn greaddy algorithms</p>
+      <p> 1. to learn greaddy algorithms</p>
+      <p> 1. to learn greaddy algorithms</p>
+
+     
+    </div>
+
+    <div id="cc" class="tab-content">
+      <h3>Cloud Computing</h3>
+      <h4>Course Outcomes</h4>
+      <p> 1. To become familiar with cloud computing and its ecosystem</p>
+      <p> 1. To become familiar with cloud computing and its ecosystem</p>
+      <p> 1. To become familiar with cloud computing and its ecosystem</p>
+      <p> 1. To become familiar with cloud computing and its ecosystem</p>
+
+       
+    </div>
+
+    <div id="sdam" class="tab-content">
+      <h3>Software Design And Modeling</h3>
+      <h4>Course Outcomes</h4>
+      <p>   1. To summarize capabilities and impact of software development process models     </p>
+      <p>   1. To summarize capabilities and impact of software development process models     </p>
+      <p>   1. To summarize capabilities and impact of software development process models     </p>
+      <p>   1. To summarize capabilities and impact of software development process models     </p>
+      <p>   1. To summarize capabilities and impact of software development process models     </p>
+      <p>   1. To summarize capabilities and impact of software development process models     </p>
+
+      
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Add click event listeners to tabs
+      document.querySelectorAll('.tabs div').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          // Remove active class from all tabs
+          document.querySelectorAll('.tabs div').forEach(function(tab) {
+            tab.classList.remove('active');
+          });
+          // Add active class to the clicked tab
+          this.classList.add('active');
+          
+          // Hide all tab content
+          document.querySelectorAll('.tab-content').forEach(function(content) {
+            content.classList.remove('active');
+          });
+          // Show the clicked tab's content
+          document.getElementById(this.id.replace('-tab', '')).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

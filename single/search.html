@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+    <!-- Include custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 0 0 48%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            border: none;
+        }
+
+        .card-body {
+            padding: 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+
+        .button:first-of-type {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .button:last-of-type {
+            background-color: #28a745;
+            color: #ffffff;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .list-group {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list-group li {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Array Operations</h1>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Search and Sort Integers</h2>
+                        <div class="form-group">
+                            <label for="integerArray">Enter integers separated by commas:</label>
+                            <input type="text" id="integerArray">
+                        </div>
+                        <button class="button" id="sortButton">Sort</button>
+                        <button class="button" id="searchButton">Search</button>
+                        <div id="result" class="result"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Named Entities</h2>
+                        <div class="form-group">
+                            <label for="entityArray">Enter named entities:</label>
+                            <input type="text" id="entityArray">
+                        </div>
+                        <button class="button" id="addEntityButton">Add Entity</button>
+                        <ul id="entityList" class="list-group"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include custom JavaScript -->
+    <script>
+        $(document).ready(function () {
+            // Initialize arrays to store integers and entities
+            let integerArray = [];
+            let entityArray = [];
+    
+            // Event handler for sorting integers
+            $("#sortButton").click(function () {
+                // Get the input string, split it into an array, and convert to numbers
+                const input = $("#integerArray").val();
+
+               // map() creates a new array from calling a function for every array element.
+
+
+                integerArray = input.split(",").map(Number);
+    
+                // Sort the array of numbers in ascending order
+                integerArray.sort((a, b) => a - b);
+    
+                // Display the sorted array in the result div
+                $("#result").html(`Sorted Array: [${integerArray}]`);
+            });
+    
+            // Event handler for searching an integer in the array
+            $("#searchButton").click(function () {
+                // Prompt the user to enter the integer to search for
+                const searchValue = parseInt(prompt("Enter the integer to search:"));
+    
+                // Check if the entered value is a valid number
+                if (!isNaN(searchValue)) {
+                    // Find the index of the search value in the array
+                    const foundIndex = integerArray.indexOf(searchValue);
+    
+                    // Display the result of the search
+                    if (foundIndex !== -1) {
+                        $("#result").html(`Integer ${searchValue} found at index ${foundIndex}`);
+                    } else {
+                        $("#result").html(`Integer ${searchValue} not found in the array`);
+                    }
+                }
+            });
+    
+            // Event handler for adding a named entity to the list
+            $("#addEntityButton").click(function () {
+                // Get the value entered in the entity input field
+                const entity = $("#entityArray").val();
+    
+                // Check if the input is not empty or just whitespace
+                if (entity.trim() !== "") {
+                    // Add the entity to the entity array
+                    entityArray.push(entity);
+    
+                    // Append the new entity as a list item to the entity list
+                    $("#entityList").append(`<li class="list-group-item">${entity}</li>`);
+    
+                    // Clear the input field after adding the entity
+                    $("#entityArray").val("");
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

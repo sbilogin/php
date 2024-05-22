@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+
+    <style>
+        body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #e8eaf6;
+    color: #333;
+}
+
+.resume {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #3f51b5;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #757575;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    border-bottom: 2px solid #3f51b5;
+    padding-bottom: 5px;
+    color: #3f51b5;
+    margin-bottom: 20px;
+}
+
+.job {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid #3f51b5;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.job h3 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.job p {
+    margin: 5px 0;
+    color: #757575;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#skills ul li {
+    background: #3f51b5;
+    color: #fff;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="resume">
+        <header>
+            <h1>Vedika Sontakke</h1>
+            <p>Web Developer</p>
+            <p>Email: john.doe@example.com | Phone: (123) 456-7890</p>
+        </header>
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>Experienced web developer with a strong background in front-end technologies and a passion for creating responsive and user-friendly websites.</p>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>Front-End Developer</h3>
+                <p>ABC Company | January 2020 - Present</p>
+                <ul>
+                    <li>Developed responsive web pages using HTML, CSS, and JavaScript.</li>
+                    <li>Collaborated with designers to implement UI/UX improvements.</li>
+                </ul>
+            </div>
+            <div class="job">
+                <h3>Web Developer</h3>
+                <p>XYZ Company | June 2017 - December 2019</p>
+                <ul>
+                    <li>Created and maintained websites for various clients.</li>
+                    <li>Optimized websites for speed and performance.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>Diploma in Computer Science 94% <br>Government Polytechnic Amravati , 2022</p>
+            <p>BTech in Computer Engineering 8.59 <br> Vishwakarma Institute of technology, Pune , 2025</p>
+
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>React</li>
+                <li>Responsive Design</li>
+            </ul>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+     // Wait until the document is fully loaded ($(document).ready).
+    $(document).ready(function() {
+    // Attach a click event listener to all <section> headers ($('section h2')).
+        $('section h2').on('click', function() {
+        // Toggle the visibility of the next sibling element of the clicked header using slideToggle().
+        $(this).siblings().slideToggle();
+    });
+});
+
+    </script>
+
+</body>
+</html>
