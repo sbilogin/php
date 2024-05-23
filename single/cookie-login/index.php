@@ -118,3 +118,12 @@
 
 </body>
 </html>
+ 
+<!--
+A cookie is a small piece of data that a server sends to a user's web browser. 
+The browser may store the cookie and send it back to the same server with later requests. 
+Cookies are used to remember information about the user, such as their preferences, login details, 
+or shopping cart contents.    
+
+
+-!>

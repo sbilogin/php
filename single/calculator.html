@@ -104,6 +104,10 @@
 
         function calculate() {
             try {
+                
+                //  eval() method evaluates or executes an argument.
+                //If the argument is an expression, eval() evaluates the expression.
+                // If the argument is one or more JavaScript statements, eval() executes the statements.
                 displayValue = eval(displayValue);
                 document.getElementById("display").value = displayValue;
             } catch (error) {

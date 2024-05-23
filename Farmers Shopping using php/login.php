@@ -10,6 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
+
+        //         // The password_verify() function can verify that a password matches a hash.
+
         if (password_verify($password, $row["password"])) {
             session_start();
             $_SESSION["username"] = $username;

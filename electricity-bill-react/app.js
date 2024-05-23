@@ -1,3 +1,5 @@
+// to run : node app.js command
+
 // express: Imports the Express library to create a web server.
 const express = require('express');
 const app = express();

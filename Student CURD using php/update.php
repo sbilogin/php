@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
 
     $sql = "UPDATE students SET name='$name', grade='$grade' WHERE id=$id";
 
+    // The function json_encode takes a PHP array or object and converts it into a JSON formatted string.
     if ($conn->query($sql) === TRUE) {
         echo json_encode(["success" => true, "message" => "Record updated successfully"]);
     } else {

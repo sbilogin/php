@@ -54,6 +54,10 @@
             foreach ($attendance as $student_id) {
                 // Check if attendance record already exists for the student and date
                 $checkStmt = $conn->prepare("SELECT * FROM attendance WHERE student_id = ? AND attendance_date = ?");
+
+                // This step binds the $student_id (integer) and $selectedDate (string) variables to the prepared statement.
+                //  This function is a key part of using prepared statements in MySQLi,
+                //  which help to prevent SQL injection and ensure that the values being inserted into the SQL query are properly escaped.
                 $checkStmt->bind_param("is", $student_id, $selectedDate);
                 $checkStmt->execute();
                 $checkResult = $checkStmt->get_result();

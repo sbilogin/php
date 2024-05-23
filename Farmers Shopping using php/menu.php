@@ -101,7 +101,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<td>" . $row["price"] . "</td>";
     echo "<td>
             <button class='add-to-cart-btn' name='add_to_cart' type='submit'>Add to Cart</button>
-            <input type='hidden' name='item_name' value='" . htmlspecialchars($row["item_name"], ENT_QUOTES, 'UTF-8') . "'>
+            <input type='hidden' name='item_name' value='"  . "'>
             <input type='hidden' name='item_price' value='" . $row["price"] . "'>
           </td>";
     echo "</tr>";

@@ -156,6 +156,8 @@
                 <p><span>Name:</span> <?php echo $name; ?></p>
                 <p><span>Bill Number:</span> <?php echo $no; ?></p>
                 <p><span>Total Bill Amount:</span> <?php echo number_format($totalBillAmount, 2)." Rs."; ?></p>
+
+                <!--The number_format() function in PHP is used to format numbers with grouped thousands and specified decimal points.-!>
             </div>
             <?php } ?>
         </div>

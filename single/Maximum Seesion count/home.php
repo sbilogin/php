@@ -22,3 +22,15 @@
         $_SESSION['session_counter']++;
     }
 ?>
+
+
+<!--
+Cookies are small pieces of data stored on the client-side,
+ suitable for persisting data across sessions and browser restarts, but with size and security limitations.
+Sessions are server-side storage mechanisms, providing a more secure way to store data temporarily while the
+user navigates your web application, expiring when the browser is closed or after a set period of inactivity. 
+
+a session is a way to store information (in variables) to be used across multiple pages. Unlike cookies,
+ the data is not stored on the user's computer. Instead, session data is stored on the server, 
+ and a unique session identifier (session ID) is sent to the client's browser to keep track of the session data.
+-!>

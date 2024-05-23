@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Management</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <!---  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <style>
         body {
@@ -111,34 +112,40 @@ input[type="text"] {
 
     <script>
         $(document).ready(function () {
-            // Add item to list1 from input field
+            // When the document is ready, execute the following functions
+    
+            // Add item to list1 from input field when the addItem button is clicked
             $('#addItem').click(function () {
-                var listItem = $('#itemInput').val();
-                if (listItem) {
+                var listItem = $('#itemInput').val(); // Get the value from the input field
+                if (listItem) { // Check if the input field is not empty
+                    // Append a new list item with the delete button to list1
                     $('#list1').append('<li>' + listItem + '<button class="delete">Delete</button></li>');
-                    $('#itemInput').val('');
+                    $('#itemInput').val(''); // Clear the input field
                 }
             });
-
-            // Copy list items from list1 to list2
+    
+            // Copy list items from list1 to list2 when the copyItems button is clicked
             $('#copyItems').click(function () {
-                $('#list2').empty();
+                $('#list2').empty(); // Clear all items from list2
+                // Loop through each list item in list1
                 $('#list1 li').each(function () {
+                    // Clone each list item and append it to list2
                     $('#list2').append($(this).clone());
                 });
             });
-
-            // Delete item from list1 when the delete button is clicked
+    
+            // Delete item from list1 when the delete button within list1 is clicked
             $('#list1').on('click', '.delete', function () {
-                $(this).closest('li').remove();
+                $(this).closest('li').remove(); // Remove the closest <li> element to the clicked delete button
             });
-
-            // Delete item from list2 when the delete button is clicked
+    
+            // Delete item from list2 when the delete button within list2 is clicked
             $('#list2').on('click', '.delete', function () {
-                $(this).closest('li').remove();
+                $(this).closest('li').remove(); // Remove the closest <li> element to the clicked delete button
             });
         });
     </script>
+    
 
 </body>
 
