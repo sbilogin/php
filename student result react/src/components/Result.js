@@ -1,6 +1,5 @@
 import React from 'react';
 import './Result.css';
-import logoImage from './logo.png';
 
 const Result = ({ formData }) => {
   const calculateResult = () => {
@@ -36,7 +35,6 @@ const Result = ({ formData }) => {
   return (
     <div className='box'>
       <div className='header'>
-        <div className='logo'><img src={logoImage} alt='Logo' /></div>
         <div className='content'>
           <div className='right-content'>
             <h2>Provisional Marksheet</h2>
