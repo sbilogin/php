@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        #board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 180px;
+    height: 180px;
+}
+
+#board div {
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+#board div:hover {
+    background-color: #eee;
+}
+        </style>
+</head>
+<body>
+    <div id="board"></div>
+    <script src="script.js"></script>
+    <script>
+        const board = document.getElementById('board');
+const cells = Array.from(board.children);
+let currentPlayer = 'X';
+
+cells.forEach(cell => {
+    cell.addEventListener('click', () => {
+        if (cell.innerText === '') {
+            cell.innerText = currentPlayer;
+            currentPlayer = currentPlayer === 'X'? 'O' : 'X';
+        }
+    });
+});
+        </script>
+</body>
+</html>

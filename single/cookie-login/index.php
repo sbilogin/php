@@ -118,6 +118,40 @@
 
 </body>
 </html>
+
+<script>
+    // script.js
+function startClock() {
+    const canvas = document.getElementById('clockCanvas');
+    const context = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+    const centerX = width / 2;
+    const centerY = height / 2;
+
+    function drawClock() {
+        context.clearRect(0, 0, width, height);
+
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+
+        context.font = '48px Arial';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        context.fillStyle = '#fff';
+        context.fillText(`${hours}:${minutes}:${seconds}`, centerX, centerY);
+
+        requestAnimationFrame(drawClock);
+    }
+
+    drawClock();
+}
+
+window.onload = startClock;
+
+    </script>
  
 <!--
 A cookie is a small piece of data that a server sends to a user's web browser. 
